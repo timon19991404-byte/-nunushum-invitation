@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#160d13">
-<title>Вечер только для тебя, Нунунушум ❤️</title>
+<title>Вечер только для тебя, Нунушум ❤️</title>
 <style>
-:root{--bg:#160d13;--wine:#6e1d36;--rose:#d98a9b;--gold:#e8c98d;--cream:#fff4e9}
+:root{--cream:#fff4e9;--gold:#e8c98d}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 50% 20%,#542037 0%,#28131f 42%,#100a10 100%);overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 25%,#f4b4c51c 0 2px,transparent 3px),radial-gradient(circle at 80% 70%,#f4b4c51c 0 2px,transparent 3px);background-size:120px 140px}
@@ -21,8 +21,8 @@ h1{font-weight:400;font-size:clamp(30px,7vw,48px);line-height:1.12;margin:0 0 12
 .envelope:before,.envelope:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid}
 .envelope:before{left:0;border-width:115px 180px 0 0;border-color:#c66d82 transparent transparent transparent}
 .envelope:after{right:0;border-width:115px 0 0 180px;border-color:#8d3552 transparent transparent transparent}
-.flap{position:absolute;top:35px;left:0;width:0;height:0;border-left:180px solid transparent;border-right:180px solid transparent;border-top:125px solid #d17c91;transform-origin:top;transition:transform .8s;z-index:4}
-.seal{position:absolute;z-index:5;left:50%;top:125px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#f7d9a6,#b67a3c);color:#70223e;font-size:25px;box-shadow:0 3px 12px #391321}
+.flap{position:absolute;top:35px;left:0;width:0;height:0;border-left:180px solid transparent;border-right:180px solid transparent;border-top:125px solid #d17c91;z-index:4}
+.seal{position:absolute;z-index:5;left:50%;top:125px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#f7d9a6,#b67a3c);color:#70223e;font-size:25px}
 .envelope-label{position:absolute;z-index:6;bottom:17px;left:0;right:0;color:#ffe9dc;font:12px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
 .open-hint{font:12px Arial,sans-serif;color:#d9b9c2;letter-spacing:.08em;margin-top:12px}
 .letter{display:none;text-align:left;margin:8px auto 0;padding:clamp(24px,6vw,42px);background:linear-gradient(145deg,#fff8ef,#f2dfd3);color:#44212c;border-radius:4px;box-shadow:0 20px 60px #0008;position:relative;animation:rise .9s ease both}
@@ -30,55 +30,83 @@ h1{font-weight:400;font-size:clamp(30px,7vw,48px);line-height:1.12;margin:0 0 12
 .letter h2{text-align:center;font-weight:400;color:#8b2949;font-size:clamp(25px,6vw,34px);margin:5px 0 22px}
 .letter p{font-size:17px;line-height:1.65;margin:0 0 14px;position:relative}
 .signature{text-align:right;color:#8b2949;font-style:italic;margin-top:24px!important}
-.accept{display:block;margin:26px auto 0;border:1px solid #b87964;border-radius:30px;padding:14px 24px;background:linear-gradient(135deg,#8d2949,#5d1835);color:#fff6ef;font:14px Arial,sans-serif;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 20px #8d294955;position:relative}
-.accept:active{transform:scale(.98)}
+.media-title{text-align:center;color:#8b2949;font-size:22px;margin:28px 0 10px}
+.media-note{text-align:center;color:#79505a;font:13px Arial,sans-serif;margin:0 0 14px;line-height:1.5}
+.music-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#24121c;box-shadow:0 10px 28px #5d183533}
+.music-frame iframe{width:100%;height:100%;border:0}
+.cinema{position:relative;overflow:hidden;min-height:380px;border-radius:12px;background:linear-gradient(180deg,#24152a 0%,#8e4352 43%,#e5a477 70%,#351a2a 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff8f0;box-shadow:0 10px 28px #5d183533;isolation:isolate}
+.sun{position:absolute;width:145px;height:145px;border-radius:50%;background:radial-gradient(circle,#ffe6bd 0%,#f7bd8c 45%,#dc806f 72%,transparent 73%);top:22%;left:50%;transform:translateX(-50%);filter:blur(1px);animation:sunset 12s ease-in-out infinite alternate;z-index:-1}
+.horizon{position:absolute;left:-10%;right:-10%;bottom:-5%;height:48%;background:linear-gradient(160deg,#321d32,#1b1425 70%);clip-path:polygon(0 40%,18% 15%,34% 34%,52% 10%,72% 30%,88% 12%,100% 32%,100% 100%,0 100%);z-index:-1}
+.cinema:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 65%,#f6b68a55,transparent 55%),linear-gradient(180deg,#120c1a22,#120c1a66);z-index:-1}
+.cinema-copy{padding:30px 22px;max-width:440px;text-shadow:0 2px 15px #24101c;animation:cinemaFade 14s ease-in-out infinite}
+.cinema-copy .small{font:11px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#ffe2c1}
+.cinema-copy h3{font-size:clamp(27px,7vw,38px);font-weight:400;line-height:1.2;margin:18px 0}
+.cinema-copy p{font-size:17px;line-height:1.65;margin:0}
+.cinema-copy .heart{font-size:34px;margin-top:18px;display:block;animation:pulse 1.8s ease-in-out infinite}
+.accept{display:block;margin:26px auto 0;border:1px solid #b87964;border-radius:30px;padding:14px 24px;background:linear-gradient(135deg,#8d2949,#5d1835);color:#fff6ef;font:14px Arial,sans-serif;cursor:pointer;box-shadow:0 8px 20px #8d294955;position:relative}
 .reply{display:none;text-align:center;color:#8b2949;font-size:20px;line-height:1.5;margin:22px 0 0;animation:rise .7s ease both}
 .foot{font:11px Arial,sans-serif;color:#c49aa7;margin-top:25px;letter-spacing:.08em}
 body.open .envelope-button{display:none}
 body.open .letter{display:block}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:380px){.letter p{font-size:16px}.envelope-button{height:215px}.flap{border-left-width:150px;border-right-width:150px}.envelope:before{border-right-width:150px}.envelope:after{border-left-width:150px}}
+@keyframes sunset{from{transform:translate(-50%,0) scale(.92);opacity:.8}to{transform:translate(-50%,14px) scale(1.08);opacity:1}}
+@keyframes cinemaFade{0%,12%{opacity:0;transform:translateY(15px)}22%,78%{opacity:1;transform:translateY(0)}90%,100%{opacity:0;transform:translateY(-10px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@media(max-width:380px){.letter p{font-size:16px}.envelope-button{height:215px}.flap{border-left-width:150px;border-right-width:150px}.envelope:before{border-right-width:150px}.envelope:after{border-left-width:150px}.cinema{min-height:340px}}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <section class="panel">
-    <div class="kicker">особенное приглашение</div>
-    <h1>Вечер только для тебя,<br>Нунунушум ❤️</h1>
-    <p class="sub">У меня есть кое-что важное для тебя…</p>
+<main class="wrap"><section class="panel">
+<div class="kicker">особенное приглашение</div>
+<h1>Вечер только для тебя,<br>Нунушум ❤️</h1>
+<p class="sub">У меня есть кое-что важное для тебя…</p>
+<button class="envelope-button" id="openEnvelope" aria-label="Открыть письмо">
+<span class="envelope"></span><span class="flap"></span><span class="seal">♥</span>
+<span class="envelope-label">Тебе, моя любимая</span>
+</button>
+<div class="open-hint" id="hint">Нажми на конверт, чтобы открыть ❤️</div>
+<article class="letter" id="letter">
+<h2>Нунушум ❤️</h2>
+<p>Я хочу попросить у тебя прощения…</p>
+<p>Прости меня за мою грубость, за то, что я иногда придираюсь к мелочам, злюсь и говорю с тобой слишком резко. Ты совсем не заслуживаешь такого отношения.</p>
+<p>Я не хочу, чтобы между нами были ссоры из-за каких-то пустяков. Мне не нужны споры, мне нужно твоё счастье, твоя улыбка и наше спокойствие.</p>
+<p>Я хочу пригласить тебя на свидание. ❤️</p>
+<p>Скажи, чего бы тебе хотелось, куда бы ты хотела пойти и что бы ты хотела сделать. Я постараюсь исполнить любое твоё желание.</p>
+<p>Я хочу провести этот вечер только с тобой, подарить тебе улыбку и напомнить, насколько сильно ты мне дорога.</p>
+<p>Прости меня, моя любимая. ❤️</p>
+<p class="signature">С любовью, твой ❤️</p>
 
-    <button class="envelope-button" id="openEnvelope" aria-label="Открыть письмо">
-      <span class="envelope"></span><span class="flap"></span><span class="seal">♥</span>
-      <span class="envelope-label">Тебе, моя любимая</span>
-    </button>
-    <div class="open-hint" id="hint">Нажми на конверт, чтобы открыть ❤️</div>
+<h3 class="media-title">Наша песня — «Ошол күнү» 🎵</h3>
+<p class="media-note">FREEMAN 996 & Бегиш. Нажми Play, чтобы включить официальное видео и музыку.</p>
+<div class="music-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/gMn5U3zUjzQ?rel=0&playsinline=1" title="FREEMAN 996, Бегиш — Ошол күнү" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
-    <article class="letter" id="letter">
-      <h2>Нунунушум ❤️</h2>
-      <p>Я хочу попросить у тебя прощения…</p>
-      <p>Прости меня за мою грубость, за то, что я иногда придираюсь к мелочам, злюсь и говорю с тобой слишком резко. Ты совсем не заслуживаешь такого отношения.</p>
-      <p>Я не хочу, чтобы между нами были ссоры из-за каких-то пустяков. Мне не нужны споры, мне нужно твоё счастье, твоя улыбка и наше спокойствие.</p>
-      <p>Я хочу пригласить тебя на свидание. ❤️</p>
-      <p>Скажи, чего бы тебе хотелось, куда бы ты хотела пойти и что бы ты хотела сделать. Я постараюсь исполнить любое твоё желание.</p>
-      <p>Я хочу провести этот вечер только с тобой, подарить тебе улыбку и напомнить, насколько сильно ты мне дорога.</p>
-      <p>Прости меня, моя любимая. ❤️</p>
-      <p class="signature">С любовью, твой ❤️</p>
-      <button class="accept" id="accept">Принять приглашение ❤️</button>
-      <div class="reply" id="reply">Тогда этот вечер — только наш. ❤️<br>Я люблю тебя, Нунунушум!</div>
-    </article>
-    <div class="foot">СДЕЛАНО С ЛЮБОВЬЮ ❤️</div>
-  </section>
-</main>
+<h3 class="media-title">Нунушум, ты очень дорога мне ❤️</h3>
+<p class="media-note">Маленькая кинематографическая история о любви, сожалении и желании беречь друг друга.</p>
+<div class="cinema" role="img" aria-label="Романтическая анимированная сцена заката с посланием о любви и прощении">
+<div class="sun"></div><div class="horizon"></div>
+<div class="cinema-copy">
+<div class="small">Для самой дорогой</div>
+<h3>Я не хочу терять твою улыбку</h3>
+<p>Прости меня за резкие слова. Ты для меня особенная. Я хочу не спорить с тобой, а беречь тебя, слышать и делать счастливой.</p>
+<span class="heart">❤️</span>
+</div>
+</div>
+
+<button class="accept" id="accept">Принять приглашение ❤️</button>
+<div class="reply" id="reply">Тогда этот вечер — только наш. ❤️<br>Я люблю тебя, Нунушум!</div>
+</article>
+<div class="foot">СДЕЛАНО С ЛЮБОВЬЮ ❤️</div>
+</section></main>
 <script>
-const openButton=document.getElementById('openEnvelope');
-openButton.addEventListener('click',()=>{
-  document.body.classList.add('open');
-  document.getElementById('hint').style.display='none';
+document.getElementById('openEnvelope').addEventListener('click',()=>{
+ document.body.classList.add('open');
+ document.getElementById('hint').style.display='none';
 });
 document.getElementById('accept').addEventListener('click',()=>{
-  document.getElementById('reply').style.display='block';
-  document.getElementById('accept').textContent='❤️ Спасибо, любимая ❤️';
+ document.getElementById('reply').style.display='block';
+ document.getElementById('accept').textContent='❤️ Спасибо, любимая ❤️';
 });
 </script>
-</body>
-</html>
+</body></html>
